@@ -1,0 +1,40 @@
+declare
+s1 varchar2(9);
+s2 varchar2(9);
+l integer;
+i integer;
+begin
+dbms_output.put_line('enter string');
+s1:='&s1';
+l:=length(s1);
+for i in reverse 1..l loop
+s2:=s2 || substr(s1,i,1);
+end loop;
+dbms_output.put_line('string is'||s2);
+end;
+/
+
+declare
+i integer:=101;
+m integer;
+rem integer;
+pal integer:=0;
+begin
+m:=i;
+while i>0 loop
+rem:=MOD(i,10);
+pal:=(pal*10)+rem;
+i:=trunc(i/10);
+end loop;
+dbms_output.put_line(pal);
+if m=pal then 
+dbms_output.put_line('palindrome');
+else
+dbms_output.put_line('not palindrome');
+end if;
+end;
+/
+
+output sample:
+101
+palindrome
