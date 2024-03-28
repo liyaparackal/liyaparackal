@@ -1,0 +1,32 @@
+//HTML code to REMOVE DUPLICATE ELEMENTS from an array
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Distinct Array</title>
+</head>
+<body>
+	<label for="input">Enter the number of elements:</label>
+	<input type="text" id="input">
+	<button onclick="calculate()">Calculate</button>
+	<p id="output"></p>
+	<script>
+		function calculate() {
+			const numbers = [];
+			const n = parseInt(document.getElementById("input").value);
+			for (let i = 0; i < n; i++) {
+				const number = parseInt(prompt('Enter the elements: '));
+			// "prompt" to input values inside loop
+				numbers.push(number);
+			}
+			const distinct = [...new Set(numbers)];
+    // new Set(array name) creates a new set from array 
+    //Set removes duplicates
+    // ... to convert back to array
+			const output = document.getElementById("output");
+			output.innerHTML = `Original array: ${numbers}<br>Distinct array: ${distinctNumbers}`;
+			console.log(`Original array: ${numbers}`);
+			console.log(`Distinct array: ${distinct}`);
+		}
+	</script>
+</body>
+</html>
