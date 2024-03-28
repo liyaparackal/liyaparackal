@@ -1,0 +1,27 @@
+//HTML CODE TO REVERSE STRING
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reverse String</title>
+</head>
+<body>
+	<label for="input">Enter a string:</label>
+	<input type="text" id="input">
+	<button onclick="reverseString()">Reverse</button>
+	<p id="output"></p>
+
+	<script>
+		function reverseString() {
+			const str = document.getElementById("input").value;
+			let reversedStr = '';
+
+			for (let i = str.length - 1; i >= 0; i--) {
+				reversedStr += str[i];  
+			 //TRAVERSE in REVERSE order & CONCATENATE INTO A STRING
+			}
+
+			document.getElementById("output").innerHTML = `Original string: ${str}<br>Reversed string: ${reversedStr}`;
+		}
+	</script>
+</body>
+</html>
